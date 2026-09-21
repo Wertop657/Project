@@ -544,6 +544,26 @@ b,strong{font-weight:500;color:#fff}
 .tl p{margin:0;color:var(--muted);max-width:62ch;font-size:15px}
 .tl--now h3{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
+/* ─────────── ФРАЗА-ПЕРЕДЫШКА ─────────── */
+.manifest{
+  position:relative;z-index:1;
+  padding:clamp(56px,9vh,110px) 0;
+  border-block:1px solid var(--line);
+  background:
+    radial-gradient(70% 140% at 20% 50%,rgba(124,92,255,.14),transparent 62%),
+    radial-gradient(60% 130% at 88% 50%,rgba(37,230,210,.1),transparent 62%);
+}
+.manifest__text{
+  margin:0;max-width:24ch;
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(24px,4.6vw,54px);line-height:1.16;letter-spacing:-.03em;
+  color:rgba(255,255,255,.42);
+}
+.manifest__text b{
+  font-weight:400;color:transparent;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;
+}
+
 /* ─────────── ПРОЕКТ ─────────── */
 .pcard{
   position:relative;display:grid;grid-template-columns:1fr .92fr;gap:clamp(26px,4vw,56px);
@@ -574,6 +594,18 @@ b,strong{font-weight:500;color:#fff}
 .pcard__points span{color:var(--text);font-size:15px}
 
 .pcard__visual{position:relative;z-index:2;perspective:1100px}
+.deck{position:relative;transform-style:preserve-3d}
+.deck__back{
+  position:absolute;inset:0;border-radius:16px;
+  border:1px solid var(--line);background:rgba(12,12,19,.75);
+  transform-origin:center;
+  transition:transform .7s var(--ease),opacity .7s var(--ease);
+}
+.deck__back--1{transform:rotateY(-11deg) rotateX(6deg) translate3d(26px,-20px,-40px) scale(.97);opacity:.7}
+.deck__back--2{transform:rotateY(-11deg) rotateX(6deg) translate3d(50px,-38px,-80px) scale(.94);opacity:.4}
+.pcard:hover .deck__back--1{transform:rotateY(-5deg) rotateX(3deg) translate3d(38px,-28px,-40px) scale(.97)}
+.pcard:hover .deck__back--2{transform:rotateY(-5deg) rotateX(3deg) translate3d(72px,-52px,-80px) scale(.94)}
+.deck .mock{position:relative}
 .mock{
   border:1px solid var(--line);border-radius:16px;overflow:hidden;
   background:rgba(10,10,16,.85);
@@ -648,6 +680,8 @@ b,strong{font-weight:500;color:#fff}
 }
 
 @media (max-width:900px){
+  .deck__back{display:none}
+  .manifest__text{max-width:none}
   .pf__top{flex-wrap:wrap;align-items:flex-start}
   .pf__act{width:100%;padding-bottom:0}
   .pf__act .btn{flex:1}
