@@ -346,7 +346,34 @@
     });
   }
 
-  /* ---------- 10. Мелочи ---------- */
+  /* ---------- 10. Тянка на шапке ---------- */
+  const mascot = $('#mascot');
+  if (mascot) {
+    const poses = ['idle', 'wave', 'happy', 'sleep'];
+    const titles = {
+      idle: 'сидит', wave: 'машет', happy: 'радуется', sleep: 'спит'
+    };
+    const hint = $('.mz__hint', mascot);
+    let i = 0;
+    let popTimer = 0;
+
+    mascot.addEventListener('click', () => {
+      i = (i + 1) % poses.length;
+      const pose = poses[i];
+      mascot.dataset.pose = pose;
+      if (hint) hint.textContent = titles[pose];
+      mascot.setAttribute('aria-label', `Тянка YundeZi: ${titles[pose]}. Нажмите, чтобы сменить позу`);
+
+      // короткий подскок на смене позы
+      mascot.classList.remove('is-pop');
+      void mascot.offsetWidth;
+      mascot.classList.add('is-pop');
+      clearTimeout(popTimer);
+      popTimer = setTimeout(() => mascot.classList.remove('is-pop'), 520);
+    });
+  }
+
+  /* ---------- 11. Мелочи ---------- */
   const year = $('#year');
   if (year) year.textContent = new Date().getFullYear();
 })();

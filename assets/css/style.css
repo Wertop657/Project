@@ -92,11 +92,11 @@ b,strong{font-weight:500;color:#fff}
 .loader__word span:nth-child(1){animation-delay:.05s}
 .loader__word span:nth-child(2){animation-delay:.1s}
 .loader__word span:nth-child(3){animation-delay:.15s}
-.loader__word span:nth-child(4){animation-delay:.2s;color:var(--violet)}
+.loader__word span:nth-child(4){animation-delay:.2s}
 .loader__word span:nth-child(5){animation-delay:.25s}
-.loader__word span:nth-child(6){animation-delay:.3s}
+.loader__word span:nth-child(6){animation-delay:.3s;color:var(--violet)}
 .loader__word span:nth-child(7){animation-delay:.35s}
-.loader__word span:nth-child(8){animation-delay:.4s}
+
 @keyframes loadIn{to{opacity:1;transform:none}}
 
 .loader__bar{height:2px;background:var(--line);border-radius:2px;overflow:hidden}
@@ -197,6 +197,99 @@ b,strong{font-weight:500;color:#fff}
 .burger i:nth-child(2){top:25px}
 .burger.is-open i:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
 .burger.is-open i:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+
+/* ─────────── ТЯНКА НА ШАПКЕ ─────────── */
+.mz{
+  position:absolute;
+  /* сидит ровно на нижней кромке шапки, ноги свисают в первый экран */
+  top:100%;left:clamp(175px,calc(5vw + 155px),250px);transform:translateY(-64%);
+  width:clamp(64px,7vw,86px);
+  padding:0;border:0;background:none;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  z-index:3;
+  filter:drop-shadow(0 10px 22px rgba(0,0,0,.55));
+  transition:filter .35s var(--ease);
+}
+.mz:hover{filter:drop-shadow(0 12px 26px rgba(124,92,255,.5))}
+.mz__svg{width:100%;height:auto;overflow:visible}
+
+/* части, которыми двигаем */
+.mz__all,.mz__head,.mz__arm,.mz__leg,.mz__ahoge,.mz__armWave,
+.mz__eyes,.mz__eyes--happy,.mz__eyes--shut,.mz__zzz,.mz__spark{
+  transform-box:view-box;
+}
+.mz__arm--l{transform-origin:62px 101px}
+.mz__arm--r,.mz__armWave{transform-origin:98px 101px}
+.mz__leg--l{transform-origin:69px 120px}
+.mz__leg--r{transform-origin:91px 120px}
+.mz__head{transform-origin:80px 92px}
+.mz__ahoge{transform-origin:79px 19px}
+.mz__all{transform-origin:80px 128px}
+
+/* по умолчанию видны только открытые глаза */
+.mz__eyes--happy,.mz__eyes--shut,.mz__zzz,.mz__spark,.mz__armWave{opacity:0}
+
+/* ── спокойная поза: дыхание, качание ног, моргание ── */
+.mz__all{animation:mzBreathe 3.4s ease-in-out infinite}
+.mz__leg--l{animation:mzSwing 2.6s ease-in-out infinite alternate}
+.mz__leg--r{animation:mzSwing 2.6s ease-in-out infinite alternate -1.3s}
+.mz__ahoge{animation:mzAhoge 2.2s ease-in-out infinite alternate}
+.mz__eyes{animation:mzBlink 5.2s infinite}
+
+@keyframes mzBreathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.6px)}}
+@keyframes mzSwing{from{transform:rotate(-7deg)}to{transform:rotate(8deg)}}
+@keyframes mzAhoge{from{transform:rotate(-8deg)}to{transform:rotate(10deg)}}
+@keyframes mzBlink{0%,92%,100%{transform:scaleY(1)}95%,97%{transform:scaleY(.12)}}
+.mz__eyes{transform-origin:80px 66px}
+
+/* ── поза «привет»: машет рукой ── */
+.mz[data-pose="wave"] .mz__arm--r{opacity:0}
+.mz[data-pose="wave"] .mz__armWave{opacity:1;animation:mzWave .5s ease-in-out infinite alternate}
+@keyframes mzWave{from{transform:rotate(-14deg)}to{transform:rotate(16deg)}}
+.mz[data-pose="wave"] .mz__head{animation:mzTilt 1s ease-in-out infinite alternate}
+@keyframes mzTilt{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+
+/* ── поза «ура»: руки вверх, глаза-дужки, искры ── */
+.mz[data-pose="happy"] .mz__arm--l{transform:rotate(100deg)}
+.mz[data-pose="happy"] .mz__arm--r{transform:rotate(-100deg)}
+.mz[data-pose="happy"] .mz__eyes{opacity:0;animation:none}
+.mz[data-pose="happy"] .mz__eyes--happy{opacity:1}
+.mz[data-pose="happy"] .mz__spark{opacity:1;animation:mzSpark 1.1s ease-in-out infinite alternate}
+.mz[data-pose="happy"] .mz__all{animation:mzHop .6s ease-in-out infinite}
+.mz[data-pose="happy"] .mz__leg--l,
+.mz[data-pose="happy"] .mz__leg--r{animation-duration:.7s}
+@keyframes mzSpark{from{opacity:.35;transform:scale(.85)}to{opacity:1;transform:scale(1.1)}}
+@keyframes mzHop{0%,100%{transform:translateY(0)}45%{transform:translateY(-5px)}}
+
+/* ── поза «сон»: голова набок, zZz ── */
+.mz[data-pose="sleep"] .mz__eyes{opacity:0;animation:none}
+.mz[data-pose="sleep"] .mz__eyes--shut{opacity:1}
+.mz[data-pose="sleep"] .mz__head{transform:rotate(11deg)}
+.mz[data-pose="sleep"] .mz__leg--l,
+.mz[data-pose="sleep"] .mz__leg--r{animation-duration:5s}
+.mz[data-pose="sleep"] .mz__zzz{opacity:1;animation:mzZzz 2.2s ease-out infinite}
+.mz[data-pose="sleep"] .mz__all{animation:mzBreathe 4.6s ease-in-out infinite}
+@keyframes mzZzz{0%{opacity:0;transform:translate(0,4px) scale(.8)}
+  35%{opacity:1}100%{opacity:0;transform:translate(6px,-12px) scale(1.1)}}
+
+/* ── щелчок: подпрыгивает при смене позы ── */
+.mz.is-pop .mz__all{animation:mzPop .5s var(--ease)}
+@keyframes mzPop{
+  0%{transform:translateY(0) scale(1)}
+  30%{transform:translateY(-9px) scale(1.09,.93)}
+  60%{transform:translateY(0) scale(.95,1.06)}
+  100%{transform:translateY(0) scale(1)}
+}
+
+/* подсказка при наведении */
+.mz__hint{
+  position:absolute;left:50%;top:-6px;transform:translate(-50%,-100%);
+  white-space:nowrap;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);background:rgba(10,10,16,.9);border:1px solid var(--line);
+  padding:5px 10px;border-radius:99px;opacity:0;pointer-events:none;
+  transition:opacity .3s var(--ease),transform .3s var(--ease);
+}
+.mz:hover .mz__hint,.mz:focus-visible .mz__hint{opacity:1;transform:translate(-50%,-110%)}
 
 /* ─────────── МОБИЛЬНОЕ МЕНЮ ─────────── */
 .mmenu{
@@ -672,6 +765,11 @@ b,strong{font-weight:500;color:#fff}
 .footer__up:hover{color:var(--text)}
 
 /* ─────────── АДАПТИВ ─────────── */
+/* на узком десктопе между логотипом и меню мало места */
+@media (max-width:1100px){
+  .mz{width:66px;left:clamp(168px,calc(5vw + 150px),240px)}
+}
+
 @media (max-width:1080px){
   .cards{grid-template-columns:repeat(2,1fr)}
   .about__grid{grid-template-columns:1fr;gap:34px}
@@ -680,6 +778,7 @@ b,strong{font-weight:500;color:#fff}
 }
 
 @media (max-width:900px){
+  .mz{left:auto;right:76px;transform:translate(0,-64%)}
   .deck__back{display:none}
   .manifest__text{max-width:none}
   .pf__top{flex-wrap:wrap;align-items:flex-start}
@@ -697,6 +796,7 @@ b,strong{font-weight:500;color:#fff}
 
 @media (max-width:640px){
   html{scroll-padding-top:80px}
+  .mz{right:66px;width:56px}
   .about__side{grid-template-columns:1fr}
   .pf__grid{grid-template-columns:1fr}
   .pf__grid > div{padding:15px 22px}
@@ -734,6 +834,7 @@ b,strong{font-weight:500;color:#fff}
   }
   [data-reveal],.js-ready .char,.js-ready .word--outline{opacity:1!important;transform:none!important}
   .grain,.hero__canvas{display:none}
+  .mz__all,.mz__leg,.mz__ahoge,.mz__eyes,.mz__head,.mz__armWave,.mz__zzz,.mz__spark{animation:none!important}
   .marquee__track{animation:none}
 }
 
