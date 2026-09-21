@@ -79,9 +79,10 @@ python3 -m http.server 8000
 Сайт — обычная статика, поэтому так же разворачивается на любом хостинге,
 Netlify, Vercel или Cloudflare Pages: достаточно отдать корень репозитория.
 
-## Что стоит заменить
+## Контакты на сайте
 
-В `index.html` указаны заглушки для контактов — поправьте на свои:
+Указаны в разделе «Связаться» в `index.html`:
 
-- `info@leo-wend.ru` — почта;
-- `@leowend` — Telegram.
+- Telegram — [@ITLeoWend](https://t.me/ITLeoWend)
+- ВКонтакте — [YundeZi](https://vk.com/yundezi)
+- Телефон — +7 961 529-15-22
