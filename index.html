@@ -68,6 +68,7 @@
     <span class="nav__logotext">Leo<i>—</i>wend</span>
   </a>
   <nav class="nav__menu" aria-label="Основная навигация">
+    <a href="#profile" data-link>Профиль</a>
     <a href="#about" data-link>Обо мне</a>
     <a href="#stack" data-link>Направления</a>
     <a href="#path" data-link>Путь</a>
@@ -81,11 +82,12 @@
 
 <div class="mmenu" id="mobileMenu" aria-hidden="true">
   <nav class="mmenu__list" aria-label="Мобильная навигация">
-    <a href="#about" data-link><em>01</em> Обо мне</a>
-    <a href="#stack" data-link><em>02</em> Направления</a>
-    <a href="#path" data-link><em>03</em> Путь</a>
-    <a href="#project" data-link><em>04</em> Проект</a>
-    <a href="#contact" data-link><em>05</em> Связаться</a>
+    <a href="#profile" data-link><em>01</em> Профиль</a>
+    <a href="#about" data-link><em>02</em> Обо мне</a>
+    <a href="#stack" data-link><em>03</em> Направления</a>
+    <a href="#path" data-link><em>04</em> Путь</a>
+    <a href="#project" data-link><em>05</em> Проект</a>
+    <a href="#contact" data-link><em>06</em> Связаться</a>
   </nav>
   <div class="mmenu__foot">
     <span>Юрий Радочин</span>
@@ -101,7 +103,7 @@
 
     <div class="hero__inner">
       <p class="hero__eyebrow" data-reveal>
-        <i class="dot"></i> Доступен для проектов · Краснодар
+        <i class="dot"></i> Leo-wend · Краснодар
       </p>
 
       <h1 class="hero__title" data-words>
@@ -122,7 +124,7 @@
             <span>Смотреть проект</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#contact" class="btn btn--ghost" data-magnet data-link><span>Связаться</span></a>
+          <a href="#profile" class="btn btn--ghost" data-magnet data-link><span>Мой профиль</span></a>
         </div>
       </div>
 
@@ -147,37 +149,100 @@
     </div>
   </div>
 
+  <!-- ─────────── ПРОФИЛЬ ─────────── -->
+  <section class="section profile" id="profile">
+    <div class="wrap">
+      <header class="shead">
+        <span class="shead__num" data-reveal>01</span>
+        <h2 class="shead__title" data-reveal>Профиль</h2>
+      </header>
+
+      <article class="pf" data-reveal>
+        <div class="pf__cover">
+          <img src="assets/img/cover.jpg" alt="" aria-hidden="true" width="1440" height="844" loading="lazy">
+          <span class="pf__veil" aria-hidden="true"></span>
+        </div>
+
+        <div class="pf__top">
+          <figure class="pf__ava">
+            <img src="assets/img/avatar.jpg" alt="Юрий Радочин" width="440" height="440">
+            <i class="pf__online" aria-hidden="true"></i>
+          </figure>
+
+          <div class="pf__id">
+            <h3 class="pf__name">Юрий Радочин</h3>
+            <p class="pf__tag">Разработка ( LoRi )</p>
+          </div>
+
+          <div class="pf__act">
+            <a class="btn btn--primary" href="https://t.me/ITLeoWend" target="_blank" rel="noopener" data-magnet>
+              <span>Telegram</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="https://vk.com/yundezi" target="_blank" rel="noopener" data-magnet>
+              <span>ВКонтакте</span>
+            </a>
+          </div>
+        </div>
+
+        <dl class="pf__grid">
+          <div><dt>Возраст</dt><dd>18 лет</dd></div>
+          <div><dt>Город</dt><dd>Краснодар</dd></div>
+          <div><dt>Образование</dt><dd>Академия ТОР, 3 курс</dd></div>
+          <div><dt>Статус</dt><dd>ИП</dd></div>
+          <div><dt>Проект</dt><dd>Leo-wend</dd></div>
+          <div><dt>Роль</dt><dd>Директор по разработке CRM</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
   <!-- ─────────── ОБО МНЕ ─────────── -->
   <section class="section about" id="about">
     <div class="wrap">
       <header class="shead">
-        <span class="shead__num" data-reveal>01</span>
+        <span class="shead__num" data-reveal>02</span>
         <h2 class="shead__title" data-reveal>Обо мне</h2>
       </header>
 
       <div class="about__grid">
         <div class="about__text">
-          <p class="lead" data-reveal>
-            Меня зовут <b>Юрий Радочин</b>, мне 18 лет. Учусь на 3 курсе
-            <b>Компьютерной академии ТОР</b> и веду разработку в проекте <b>Leo-wend</b>.
-          </p>
-          <p data-reveal data-delay="1">
-            Я пробовал себя почти везде: информационная безопасность и анонимность,
-            социальная инженерия, разработка игр, 3D-моделирование. Каждое направление дало
-            свой угол зрения — понимание того, как системы ломаются, как думают пользователи
-            и как рождается визуал.
-          </p>
-          <p data-reveal data-delay="2">
-            В итоге я осознанно остался в <b>веб-разработке</b>: здесь всё это соединяется в
-            один продукт. Сейчас углубляюсь в <b>искусственный интеллект</b> и строю
-            CRM-решения, которые экономят людям часы каждый день.
-          </p>
-          <p data-reveal data-delay="3">
-            Работаю официально — оформлено <b>ИП</b>.
-          </p>
+          <section class="sub" data-reveal>
+            <h3 class="sub__title"><i aria-hidden="true"></i>Коротко</h3>
+            <p class="lead">
+              Меня зовут <b>Юрий Радочин</b>, мне 18 лет. Учусь на 3 курсе
+              <b>Компьютерной академии ТОР</b> и веду разработку в проекте <b>Leo-wend</b>.
+              Всё оформлено официально — есть <b>ИП</b>.
+            </p>
+          </section>
+
+          <section class="sub" data-reveal data-delay="1">
+            <h3 class="sub__title"><i aria-hidden="true"></i>Откуда я пришёл</h3>
+            <p>
+              Я пробовал себя почти везде: информационная безопасность и анонимность,
+              социальная инженерия, разработка игр, 3D-моделирование. Каждое направление дало
+              свой угол зрения — понимание того, как системы ломаются, как думают пользователи
+              и как рождается визуал.
+            </p>
+          </section>
+
+          <section class="sub" data-reveal data-delay="2">
+            <h3 class="sub__title"><i aria-hidden="true"></i>Чем занят сейчас</h3>
+            <p>
+              В итоге я осознанно остался в <b>веб-разработке</b>: здесь всё это соединяется в
+              один продукт. Сейчас углубляюсь в <b>искусственный интеллект</b> и строю
+              CRM-решения, которые экономят людям часы каждый день.
+            </p>
+          </section>
         </div>
 
-        <aside class="about__card" data-reveal data-delay="2" data-tilt>
+        <aside class="about__side">
+        <figure class="shot" data-reveal data-delay="1" data-tilt>
+          <img src="assets/img/portrait.jpg" alt="Юрий Радочин" width="620" height="878" loading="lazy">
+          <figcaption>Юрий Радочин</figcaption>
+        </figure>
+
+        <div class="about__card" data-reveal data-delay="2" data-tilt>
           <div class="about__card-glow" aria-hidden="true"></div>
           <ul class="facts">
             <li><span>Возраст</span><em><b data-count="18">18</b></em></li>
@@ -187,8 +252,9 @@
           </ul>
           <div class="about__card-foot">
             <i class="pulse" aria-hidden="true"></i>
-            <span>Открыт к сотрудничеству</span>
+            <span>Обычно отвечаю быстро</span>
           </div>
+        </div>
         </aside>
       </div>
     </div>
@@ -198,10 +264,12 @@
   <section class="section stack" id="stack">
     <div class="wrap">
       <header class="shead">
-        <span class="shead__num" data-reveal>02</span>
+        <span class="shead__num" data-reveal>03</span>
         <h2 class="shead__title" data-reveal>Направления</h2>
         <p class="shead__sub" data-reveal data-delay="1">Чем я занимаюсь и что успел попробовать</p>
       </header>
+
+      <h3 class="sub__title sub__title--wide" data-reveal><i aria-hidden="true"></i>Сейчас в работе</h3>
 
       <div class="cards">
         <article class="card card--hero" data-reveal data-tilt>
@@ -234,6 +302,11 @@
           <ul class="tags"><li>LLM</li><li>Автоматизация</li><li>Данные</li></ul>
         </article>
 
+      </div>
+
+      <h3 class="sub__title sub__title--wide" data-reveal><i aria-hidden="true"></i>Изучал и пробовал</h3>
+
+      <div class="cards">
         <article class="card" data-reveal data-tilt>
           <span class="card__idx">04</span>
           <div class="card__icon" aria-hidden="true">
@@ -271,7 +344,7 @@
   <section class="section path" id="path">
     <div class="wrap">
       <header class="shead">
-        <span class="shead__num" data-reveal>03</span>
+        <span class="shead__num" data-reveal>04</span>
         <h2 class="shead__title" data-reveal>Путь</h2>
         <p class="shead__sub" data-reveal data-delay="1">Как поиск себя превратился в специализацию</p>
       </header>
@@ -321,7 +394,7 @@
   <section class="section project" id="project">
     <div class="wrap">
       <header class="shead">
-        <span class="shead__num" data-reveal>04</span>
+        <span class="shead__num" data-reveal>05</span>
         <h2 class="shead__title" data-reveal>Проект</h2>
       </header>
 
@@ -367,17 +440,17 @@
   <section class="section contact" id="contact">
     <div class="wrap">
       <header class="shead">
-        <span class="shead__num" data-reveal>05</span>
+        <span class="shead__num" data-reveal>06</span>
         <h2 class="shead__title" data-reveal>Связаться</h2>
       </header>
 
       <div class="contact__box" data-reveal data-delay="1">
         <h3 class="contact__big" data-words>
           <span class="line"><span class="word" data-split>Давайте</span></span>
-          <span class="line"><span class="word word--outline">работать</span></span>
+          <span class="line"><span class="word word--outline">общаться</span></span>
         </h3>
         <p class="contact__sub" data-reveal data-delay="2">
-          Сайт, CRM или продукт с ИИ — напишите, обсудим задачу.
+          Пишите в Telegram или ВКонтакте — так быстрее всего.
         </p>
         <div class="contact__links" data-reveal data-delay="3">
           <a class="clink" href="https://t.me/ITLeoWend" target="_blank" rel="noopener" data-magnet>
