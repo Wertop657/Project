@@ -6,7 +6,8 @@
 Разделы: **Профиль** (обложка, аватар, карточка данных) → **Обо мне** →
 **Направления** → **Путь** → **Проект** → **Связаться**.
 
-**Домен:** [leo-wend.ru](https://leo-wend.ru)
+**Опубликован:** [wertop657.github.io/Project](https://wertop657.github.io/Project/)
+**Домен проекта:** [leo-wend.ru](https://leo-wend.ru)
 
 ## Что внутри
 
@@ -72,7 +73,10 @@ python3 -m http.server 8000
 Репозиторий уже содержит workflow `.github/workflows/deploy.yml` — при пуше
 в `main` сайт публикуется на GitHub Pages.
 
-1. **Settings → Pages → Source: GitHub Actions**.
+1. **Settings → Pages → Source: GitHub Actions** — уже включено.
+   Важно: окружение `github-pages` пускает деплой только с ветки
+   по умолчанию, поэтому её стоит переключить на `main`
+   (*Settings → General → Default branch*).
 2. Для своего домена: **Settings → Pages → Custom domain** → `leo-wend.ru`,
    затем в DNS добавить записи на `185.199.108-111.153` (A) и `CNAME` для `www`.
    GitHub сам создаст файл `CNAME` в репозитории.
