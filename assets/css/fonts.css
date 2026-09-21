@@ -1,0 +1,9 @@
+/* Локальные шрифты Unbounded + Inter (латиница и кириллица).
+   Самохостинг: без внешних CDN, быстрее и стабильнее. */
+
+@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url('../fonts/inter-300.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/inter-400.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('../fonts/inter-500.woff2') format('woff2');}
+@font-face{font-family:'Unbounded';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/unbounded-400.woff2') format('woff2');}
+@font-face{font-family:'Unbounded';font-style:normal;font-weight:600;font-display:swap;src:url('../fonts/unbounded-600.woff2') format('woff2');}
+@font-face{font-family:'Unbounded';font-style:normal;font-weight:800;font-display:swap;src:url('../fonts/unbounded-800.woff2') format('woff2');}

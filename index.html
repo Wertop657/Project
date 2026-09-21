@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07070b">
+<title>Юрий Радочин — Leo-wend · Ведущий директор по разработке CRM</title>
+<meta name="description" content="Юрий Радочин — веб-разработчик и директор по разработке CRM в проекте Leo-wend. Разработка сайтов, CRM-систем и решений на базе искусственного интеллекта.">
+<meta name="author" content="Юрий Радочин">
+<link rel="canonical" href="https://leo-wend.ru/">
+
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Leo-wend">
+<meta property="og:title" content="Юрий Радочин — Leo-wend">
+<meta property="og:description" content="Веб-разработка, CRM-системы и искусственный интеллект. Ведущий директор по разработке CRM в проекте Leo-wend.">
+<meta property="og:url" content="https://leo-wend.ru/">
+<meta property="og:image" content="https://leo-wend.ru/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/favicon.svg">
+
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/unbounded-800.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-300.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Юрий Радочин",
+  "url": "https://leo-wend.ru/",
+  "jobTitle": "Ведущий директор по разработке CRM",
+  "worksFor": { "@type": "Organization", "name": "Leo-wend" },
+  "knowsAbout": ["Веб-разработка", "CRM", "Искусственный интеллект", "Информационная безопасность", "3D-моделирование"],
+  "alumniOf": { "@type": "EducationalOrganization", "name": "Компьютерная академия ТОР" }
+}
+</script>
+</head>
+<body>
+
+<!-- ─────────── ПРЕЛОАДЕР ─────────── -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <div class="loader__word"><span>L</span><span>E</span><span>O</span><span>—</span><span>W</span><span>E</span><span>N</span><span>D</span></div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <div class="loader__num"><span id="loaderNum">0</span>%</div>
+  </div>
+</div>
+
+<!-- ─────────── ДЕКОР ─────────── -->
+<div class="grain" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><i class="aurora__a"></i><i class="aurora__b"></i><i class="aurora__c"></i></div>
+<div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__dot"></i><i class="cursor__ring"></i></div>
+<div class="scrollbar" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+<a class="skip" href="#about">Перейти к содержанию</a>
+
+<!-- ─────────── ШАПКА ─────────── -->
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" data-magnet>
+    <span class="nav__mark" aria-hidden="true"></span>
+    <span class="nav__logotext">Leo<i>—</i>wend</span>
+  </a>
+  <nav class="nav__menu" aria-label="Основная навигация">
+    <a href="#about" data-link>Обо мне</a>
+    <a href="#stack" data-link>Направления</a>
+    <a href="#path" data-link>Путь</a>
+    <a href="#project" data-link>Проект</a>
+    <a href="#contact" class="nav__cta" data-link data-magnet>Связаться</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+    <i></i><i></i>
+  </button>
+</header>
+
+<div class="mmenu" id="mobileMenu" aria-hidden="true">
+  <nav class="mmenu__list" aria-label="Мобильная навигация">
+    <a href="#about" data-link><em>01</em> Обо мне</a>
+    <a href="#stack" data-link><em>02</em> Направления</a>
+    <a href="#path" data-link><em>03</em> Путь</a>
+    <a href="#project" data-link><em>04</em> Проект</a>
+    <a href="#contact" data-link><em>05</em> Связаться</a>
+  </nav>
+  <div class="mmenu__foot">
+    <span>Юрий Радочин</span>
+    <span>Leo-wend · CRM</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ─────────── ГЕРОЙ ─────────── -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero__inner">
+      <p class="hero__eyebrow" data-reveal>
+        <i class="dot"></i> Доступен для проектов · Россия
+      </p>
+
+      <h1 class="hero__title" data-words>
+        <span class="line"><span class="word" data-split>Юрий</span></span>
+        <span class="line"><span class="word word--outline">Радочин</span></span>
+      </h1>
+
+      <div class="hero__meta">
+        <p class="hero__role" data-reveal data-delay="1">
+          Ведущий директор по разработке <b>CRM</b> — проект <b>Leo-wend</b>
+        </p>
+        <p class="hero__desc" data-reveal data-delay="2">
+          18 лет. Разрабатываю сайты и CRM-системы, изучаю искусственный интеллект.
+          Прошёл путь от кибербезопасности и 3D до продуктовой веб-разработки.
+        </p>
+        <div class="hero__actions" data-reveal data-delay="3">
+          <a href="#project" class="btn btn--primary" data-magnet data-link>
+            <span>Смотреть проект</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#contact" class="btn btn--ghost" data-magnet data-link><span>Связаться</span></a>
+        </div>
+      </div>
+
+      <div class="hero__scroll" data-reveal data-delay="4">
+        <span>Листай вниз</span><i></i>
+      </div>
+    </div>
+
+    <div class="hero__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><defs><path id="circlePath" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs>
+        <text><textPath href="#circlePath">WEB · AI · CRM · LEO-WEND · WEB · AI · CRM · LEO-WEND · </textPath></text>
+      </svg>
+      <i class="hero__badge-dot"></i>
+    </div>
+  </section>
+
+  <!-- ─────────── БЕГУЩАЯ СТРОКА ─────────── -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Веб-разработка <i>✦</i> CRM-системы <i>✦</i> Искусственный интеллект <i>✦</i> Кибербезопасность <i>✦</i> 3D и геймдев <i>✦</i></span>
+      <span>Веб-разработка <i>✦</i> CRM-системы <i>✦</i> Искусственный интеллект <i>✦</i> Кибербезопасность <i>✦</i> 3D и геймдев <i>✦</i></span>
+    </div>
+  </div>
+
+  <!-- ─────────── ОБО МНЕ ─────────── -->
+  <section class="section about" id="about">
+    <div class="wrap">
+      <header class="shead">
+        <span class="shead__num" data-reveal>01</span>
+        <h2 class="shead__title" data-reveal>Обо мне</h2>
+      </header>
+
+      <div class="about__grid">
+        <div class="about__text">
+          <p class="lead" data-reveal>
+            Меня зовут <b>Юрий Радочин</b>, мне 18 лет. Учусь на 3 курсе
+            <b>Компьютерной академии ТОР</b> и веду разработку в проекте <b>Leo-wend</b>.
+          </p>
+          <p data-reveal data-delay="1">
+            Я пробовал себя почти везде: информационная безопасность и анонимность,
+            социальная инженерия, разработка игр, 3D-моделирование. Каждое направление дало
+            свой угол зрения — понимание того, как системы ломаются, как думают пользователи
+            и как рождается визуал.
+          </p>
+          <p data-reveal data-delay="2">
+            В итоге я осознанно остался в <b>веб-разработке</b>: здесь всё это соединяется в
+            один продукт. Сейчас углубляюсь в <b>искусственный интеллект</b> и строю
+            CRM-решения, которые экономят людям часы каждый день.
+          </p>
+          <p data-reveal data-delay="3">
+            Работаю официально — оформлено <b>ИП</b>.
+          </p>
+        </div>
+
+        <aside class="about__card" data-reveal data-delay="2" data-tilt>
+          <div class="about__card-glow" aria-hidden="true"></div>
+          <ul class="facts">
+            <li><span>Возраст</span><em><b data-count="18">18</b></em></li>
+            <li><span>Курс академии ТОР</span><em><b data-count="3">3</b></em></li>
+            <li><span>Направлений освоено</span><em><b data-count="6">6</b><i>+</i></em></li>
+            <li><span>Статус</span><em><b>ИП</b></em></li>
+          </ul>
+          <div class="about__card-foot">
+            <i class="pulse" aria-hidden="true"></i>
+            <span>Открыт к сотрудничеству</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── НАПРАВЛЕНИЯ ─────────── -->
+  <section class="section stack" id="stack">
+    <div class="wrap">
+      <header class="shead">
+        <span class="shead__num" data-reveal>02</span>
+        <h2 class="shead__title" data-reveal>Направления</h2>
+        <p class="shead__sub" data-reveal data-delay="1">Чем я занимаюсь и что успел попробовать</p>
+      </header>
+
+      <div class="cards">
+        <article class="card card--hero" data-reveal data-tilt>
+          <span class="card__idx">01</span>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+          </div>
+          <h3>Веб-разработка</h3>
+          <p>Основное направление. Сайты, интерфейсы, анимации и фронтенд, который одинаково хорошо живёт на десктопе и в телефоне.</p>
+          <ul class="tags"><li>HTML / CSS</li><li>JavaScript</li><li>UI / UX</li><li>Анимация</li></ul>
+        </article>
+
+        <article class="card" data-reveal data-delay="1" data-tilt>
+          <span class="card__idx">02</span>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg>
+          </div>
+          <h3>CRM-системы</h3>
+          <p>Веду разработку CRM в Leo-wend: архитектура, логика процессов, интерфейсы для реальных команд и клиентов.</p>
+          <ul class="tags"><li>Архитектура</li><li>Процессы</li><li>Интеграции</li></ul>
+        </article>
+
+        <article class="card" data-reveal data-delay="2" data-tilt>
+          <span class="card__idx">03</span>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+          </div>
+          <h3>Искусственный интеллект</h3>
+          <p>Изучаю ИИ и встраиваю его в продукты: ассистенты, автоматизация рутины, работа с данными и языковыми моделями.</p>
+          <ul class="tags"><li>LLM</li><li>Автоматизация</li><li>Данные</li></ul>
+        </article>
+
+        <article class="card" data-reveal data-tilt>
+          <span class="card__idx">04</span>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>Безопасность и анонимность</h3>
+          <p>Разбираюсь в приватности, защите данных и том, как атакующий смотрит на систему. Применяю это, чтобы строить надёжнее.</p>
+          <ul class="tags"><li>Приватность</li><li>OSINT</li><li>Защита данных</li></ul>
+        </article>
+
+        <article class="card" data-reveal data-delay="1" data-tilt>
+          <span class="card__idx">05</span>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 8h5M19.5 5.5v5"/></svg>
+          </div>
+          <h3>Социальная инженерия</h3>
+          <p>Понимание человеческого фактора: как люди принимают решения и где системы уязвимы не технически, а психологически.</p>
+          <ul class="tags"><li>Психология</li><li>Коммуникация</li><li>Осведомлённость</li></ul>
+        </article>
+
+        <article class="card" data-reveal data-delay="2" data-tilt>
+          <span class="card__idx">06</span>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>
+          </div>
+          <h3>Геймдев и 3D</h3>
+          <p>Делал игры и занимался 3D-моделированием. Отсюда — чувство формы, света и композиции, которое я переношу в интерфейсы.</p>
+          <ul class="tags"><li>Game dev</li><li>3D</li><li>Композиция</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── ПУТЬ ─────────── -->
+  <section class="section path" id="path">
+    <div class="wrap">
+      <header class="shead">
+        <span class="shead__num" data-reveal>03</span>
+        <h2 class="shead__title" data-reveal>Путь</h2>
+        <p class="shead__sub" data-reveal data-delay="1">Как поиск себя превратился в специализацию</p>
+      </header>
+
+      <div class="timeline" id="timeline">
+        <span class="timeline__rail" aria-hidden="true"><i id="timelineFill"></i></span>
+
+        <article class="tl" data-reveal>
+          <span class="tl__dot" aria-hidden="true"></span>
+          <span class="tl__tag">Старт</span>
+          <h3>Первый код и любопытство</h3>
+          <p>Всё началось с желания понять, как устроены программы и сети изнутри. Первые скрипты, первые эксперименты, первые ошибки.</p>
+        </article>
+
+        <article class="tl" data-reveal>
+          <span class="tl__dot" aria-hidden="true"></span>
+          <span class="tl__tag">Исследование</span>
+          <h3>Безопасность, анонимность, соц. инженерия</h3>
+          <p>Погружение в то, как системы защищают и как их обходят. Научился думать как атакующий — и с тех пор проектирую с оглядкой на это.</p>
+        </article>
+
+        <article class="tl" data-reveal>
+          <span class="tl__dot" aria-hidden="true"></span>
+          <span class="tl__tag">Творчество</span>
+          <h3>Геймдев и 3D-моделирование</h3>
+          <p>Игры и трёхмерка дали визуальный язык: свет, материал, движение, ритм. Именно оттуда во мне любовь к анимации в вебе.</p>
+        </article>
+
+        <article class="tl" data-reveal>
+          <span class="tl__dot" aria-hidden="true"></span>
+          <span class="tl__tag">Академия ТОР · 3 курс</span>
+          <h3>Системное образование</h3>
+          <p>Компьютерная академия ТОР структурировала знания и дала базу, на которую лег весь практический опыт.</p>
+        </article>
+
+        <article class="tl tl--now" data-reveal>
+          <span class="tl__dot" aria-hidden="true"></span>
+          <span class="tl__tag">Сейчас</span>
+          <h3>Leo-wend · веб, CRM и ИИ</h3>
+          <p>Решил остаться в веб-разработке. Веду разработку CRM как директор направления, оформил ИП и углубляюсь в искусственный интеллект.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── ПРОЕКТ ─────────── -->
+  <section class="section project" id="project">
+    <div class="wrap">
+      <header class="shead">
+        <span class="shead__num" data-reveal>04</span>
+        <h2 class="shead__title" data-reveal>Проект</h2>
+      </header>
+
+      <article class="pcard" data-reveal data-tilt>
+        <div class="pcard__bg" aria-hidden="true"></div>
+        <div class="pcard__body">
+          <p class="pcard__kicker">Флагманский проект</p>
+          <h3 class="pcard__title">Leo<i>—</i>wend</h3>
+          <p class="pcard__desc">
+            Продукт, в котором я отвечаю за разработку CRM. Моя задача — превратить
+            хаос ручных процессов в понятную систему: заявки, клиенты, задачи и аналитика
+            в одном месте, с интерфейсом, которым приятно пользоваться каждый день.
+          </p>
+          <ul class="pcard__points">
+            <li><b>Роль</b><span>Ведущий директор по разработке CRM</span></li>
+            <li><b>Фокус</b><span>Архитектура, интерфейсы, автоматизация</span></li>
+            <li><b>Технологии</b><span>Веб-стек, интеграции, ИИ-функции</span></li>
+          </ul>
+          <a href="https://leo-wend.ru" class="btn btn--primary" data-magnet target="_blank" rel="noopener">
+            <span>Открыть leo-wend.ru</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+        <div class="pcard__visual" aria-hidden="true">
+          <div class="mock">
+            <div class="mock__bar"><i></i><i></i><i></i></div>
+            <div class="mock__body">
+              <div class="mock__side"><span></span><span></span><span></span><span></span></div>
+              <div class="mock__main">
+                <div class="mock__row"><i class="w60"></i><i class="w30"></i></div>
+                <div class="mock__chart"><u style="--h:40%"></u><u style="--h:70%"></u><u style="--h:55%"></u><u style="--h:90%"></u><u style="--h:65%"></u><u style="--h:100%"></u></div>
+                <div class="mock__row"><i class="w80"></i></div>
+                <div class="mock__row"><i class="w45"></i><i class="w45"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─────────── КОНТАКТ ─────────── -->
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <header class="shead">
+        <span class="shead__num" data-reveal>05</span>
+        <h2 class="shead__title" data-reveal>Связаться</h2>
+      </header>
+
+      <div class="contact__box" data-reveal data-delay="1">
+        <h3 class="contact__big" data-words>
+          <span class="line"><span class="word" data-split>Давайте</span></span>
+          <span class="line"><span class="word word--outline">работать</span></span>
+        </h3>
+        <p class="contact__sub" data-reveal data-delay="2">
+          Сайт, CRM или продукт с ИИ — напишите, обсудим задачу.
+        </p>
+        <div class="contact__links" data-reveal data-delay="3">
+          <a class="clink" href="https://leo-wend.ru" target="_blank" rel="noopener" data-magnet>
+            <span class="clink__label">Сайт</span><span class="clink__val">leo-wend.ru</span>
+          </a>
+          <a class="clink" href="mailto:info@leo-wend.ru" data-magnet>
+            <span class="clink__label">Почта</span><span class="clink__val">info@leo-wend.ru</span>
+          </a>
+          <a class="clink" href="https://t.me/leowend" target="_blank" rel="noopener" data-magnet>
+            <span class="clink__label">Telegram</span><span class="clink__val">@leowend</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <span>© <span id="year">2026</span> Юрий Радочин · ИП</span>
+    <span class="footer__mid">Leo-wend — разработка CRM</span>
+    <a href="#top" data-link data-magnet class="footer__up">Наверх ↑</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
