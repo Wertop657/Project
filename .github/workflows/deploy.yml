@@ -2,10 +2,10 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    # Окружение github-pages пускает деплой только с ветки по умолчанию,
-    # поэтому перечислены обе: после смены главной ветки на main
-    # лишнюю строку можно убрать.
-    branches: [main, claude/leo-wend-bio-site-3g9o7p]
+    # Окружение github-pages пускает деплой ТОЛЬКО с ветки по умолчанию.
+    # Сейчас главная — claude/leo-wend-bio-site-3g9o7p. После переключения
+    # главной ветки на main замените значение ниже на [main].
+    branches: [claude/leo-wend-bio-site-3g9o7p]
   workflow_dispatch:
 
 permissions:
