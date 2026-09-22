@@ -1,47 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="15" fill="#0b0d0f"/>
+  <g transform="translate(32 32) scale(.40) translate(-80 -78)">
   <defs>
-    <linearGradient id="fHair" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#a98cff"/><stop offset=".5" stop-color="#6ea8ff"/><stop offset="1" stop-color="#25e6d2"/>
+    <linearGradient id="pFur" x1=".2" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#59626c"/><stop offset=".5" stop-color="#3c444c"/><stop offset="1" stop-color="#232930"/>
     </linearGradient>
-    <linearGradient id="fBack" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#1fb9ab"/>
+    <linearGradient id="pLit" x1="0" y1="0" x2=".5" y2="1">
+      <stop offset="0" stop-color="#727c86"/><stop offset="1" stop-color="#454d56"/>
     </linearGradient>
-    <linearGradient id="fEye" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#5ff0ff"/><stop offset=".55" stop-color="#4f8bff"/><stop offset="1" stop-color="#7c5cff"/>
+    <linearGradient id="pOr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffc071"/><stop offset=".5" stop-color="#ff7a29"/><stop offset="1" stop-color="#e8481f"/>
     </linearGradient>
   </defs>
 
-  <clipPath id="fClip"><rect width="64" height="64" rx="15"/></clipPath>
-
-  <rect width="64" height="64" rx="15" fill="#0b0b12"/>
-
-  <g clip-path="url(#fClip)">
-  <g transform="translate(-12.8 -1.92) scale(.56)">
-    <!-- хвостики -->
-    <path d="M46 44C27 50 14 71 15 96c1 17 9 30 20 30 6 0 8-6 6-12-6-16-4-42 9-57z" fill="url(#fBack)"/>
-    <path d="M114 44c19 6 32 27 31 52-1 17-9 30-20 30-6 0-8-6-6-12 6-16 4-42-9-57z" fill="url(#fBack)"/>
-    <!-- лицо -->
-    <ellipse cx="80" cy="57" rx="39" ry="37" fill="#f9dcc7"/>
-    <!-- глаза -->
-    <path d="M56.2 64A8.5 10.5 0 0 1 72.8 64" stroke="#2a1f3d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-    <ellipse cx="64.5" cy="66" rx="8.5" ry="10.5" fill="url(#fEye)"/>
-    <ellipse cx="64.5" cy="67" rx="4" ry="6" fill="#1b1430"/>
-    <circle cx="61" cy="61" r="3.2" fill="#fff"/>
-    <path d="M87.2 64A8.5 10.5 0 0 1 103.8 64" stroke="#2a1f3d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-    <ellipse cx="95.5" cy="66" rx="8.5" ry="10.5" fill="url(#fEye)"/>
-    <ellipse cx="95.5" cy="67" rx="4" ry="6" fill="#1b1430"/>
-    <circle cx="92" cy="61" r="3.2" fill="#fff"/>
-    <!-- румянец и рот -->
-    <ellipse cx="49" cy="76" rx="7.5" ry="4.4" fill="#ff6f9c" opacity=".5"/>
-    <ellipse cx="111" cy="76" rx="7.5" ry="4.4" fill="#ff6f9c" opacity=".5"/>
-    <path d="M75 82c3 4 7 4 10 0" stroke="#8a4a63" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-    <!-- чёлка и пряди -->
-    <path d="M41 62c0-28 17-45 39-45s39 17 39 45c-5-4-9-12-11-19-5 11-13 15-21 11 2-8 0-17-4-23-4 13-11 21-19 22-5-3-9-9-11-15-6 6-10 15-12 24z" fill="url(#fHair)"/>
-    <path d="M41 60c-3 14-3 28 0 40 6-4 8-12 8-20s-4-16-8-20z" fill="url(#fHair)"/>
-    <path d="M119 60c3 14 3 28 0 40-6-4-8-12-8-20s4-16 8-20z" fill="url(#fHair)"/>
-    <rect x="36" y="44" width="15" height="9" rx="4.5" fill="#25e6d2" transform="rotate(-20 43.5 48.5)"/>
-    <rect x="109" y="44" width="15" height="9" rx="4.5" fill="#25e6d2" transform="rotate(20 116.5 48.5)"/>
-    <path d="M79 19c-2-10 5-17 11-14 5 3 4 10-1 10-2 0-3-2-2-3" stroke="url(#fHair)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <!-- орбита: два замкнутых кольца, голова перекрывает середину -->
+  <g stroke="url(#pOr)" fill="none">
+    <ellipse cx="80" cy="82" rx="64" ry="40" transform="rotate(-20 80 82)" stroke-width="5.5"/>
+    <ellipse cx="80" cy="80" rx="68" ry="27" transform="rotate(16 80 80)" stroke-width="3" opacity=".75"/>
   </g>
-  </g>
+
+  <!-- контур -->
+  <path d="M38 50 L28 14 L62 44 C72 39 88 39 98 44 L132 14 L122 50
+           C128 62 128 74 124 84 L138 92 L120 96 L112 112 L96 120
+           L80 132 L64 120 L48 112 L40 96 L22 92 L36 84 C32 74 32 62 38 50 Z"
+        fill="#0e1216"/>
+
+  <!-- шерсть -->
+  <path d="M44 53 L36 24 L64 49 C73 45 87 45 96 49 L124 24 L116 53
+           C121 63 121 74 117 83 L129 90 L114 93 L107 107 L93 114
+           L80 124 L67 114 L53 107 L46 93 L31 90 L43 83 C39 74 39 63 44 53 Z"
+        fill="url(#pFur)"/>
+
+  <!-- светлые плоскости -->
+  <path d="M36 24 L64 49 C73 45 87 45 96 49 L124 24 L104 56 L56 56 Z" fill="url(#pLit)"/>
+  <path d="M46 62 L62 60 L60 86 L46 80 Z" fill="url(#pLit)" opacity=".35"/>
+  <path d="M114 62 L98 60 L100 86 L114 80 Z" fill="url(#pLit)" opacity=".35"/>
+
+  <!-- глаза -->
+  <path d="M46 58 L72 68 L70 78 L47 70 Z" fill="url(#pOr)"/>
+  <path d="M114 58 L88 68 L90 78 L113 70 Z" fill="url(#pOr)"/>
+
+  <!-- морда -->
+  <path d="M62 80 L98 80 L94 102 L80 110 L66 102 Z" fill="#2c333a"/>
+  <path d="M69 84 L91 84 L80 96 Z" fill="#0d1114"/>
+
+  <!-- пасть -->
+  <path d="M66 100 L94 100 L88 118 L80 126 L72 118 Z" fill="#0c1013"/>
+  <path d="M68 101 L74 100 L77 114 Z" fill="#f4f1ea"/>
+  <path d="M92 101 L86 100 L83 114 Z" fill="#f4f1ea"/>
+  <path d="M75 126 L73 116 L79 119 Z" fill="#f4f1ea" opacity=".85"/>
+  <path d="M85 126 L87 116 L81 119 Z" fill="#f4f1ea" opacity=".85"/>
+</g>
 </svg>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#07070b">
+<meta name="theme-color" content="#0b0d0f">
 <title>YundeZi — Юрий Радочин · веб, CRM и искусственный интеллект</title>
 <meta name="description" content="Юрий Радочин — веб-разработчик и директор по разработке CRM в проекте Leo-wend. Разработка сайтов, CRM-систем и решений на базе искусственного интеллекта.">
 <meta name="author" content="Юрий Радочин">
@@ -45,11 +45,100 @@
 </head>
 <body>
 
+<svg class="sprite" aria-hidden="true" width="0" height="0" style="position:absolute">
+  <symbol id="panther" viewBox="0 0 160 160">
+  <defs>
+    <linearGradient id="pFur" x1=".2" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#59626c"/><stop offset=".5" stop-color="#3c444c"/><stop offset="1" stop-color="#232930"/>
+    </linearGradient>
+    <linearGradient id="pLit" x1="0" y1="0" x2=".5" y2="1">
+      <stop offset="0" stop-color="#727c86"/><stop offset="1" stop-color="#454d56"/>
+    </linearGradient>
+    <linearGradient id="pOr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffc071"/><stop offset=".5" stop-color="#ff7a29"/><stop offset="1" stop-color="#e8481f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- орбита: два замкнутых кольца, голова перекрывает середину -->
+  <g stroke="url(#pOr)" fill="none">
+    <ellipse cx="80" cy="82" rx="64" ry="40" transform="rotate(-20 80 82)" stroke-width="5.5"/>
+    <ellipse cx="80" cy="80" rx="68" ry="27" transform="rotate(16 80 80)" stroke-width="3" opacity=".75"/>
+  </g>
+
+  <!-- контур -->
+  <path d="M38 50 L28 14 L62 44 C72 39 88 39 98 44 L132 14 L122 50
+           C128 62 128 74 124 84 L138 92 L120 96 L112 112 L96 120
+           L80 132 L64 120 L48 112 L40 96 L22 92 L36 84 C32 74 32 62 38 50 Z"
+        fill="#0e1216"/>
+
+  <!-- шерсть -->
+  <path d="M44 53 L36 24 L64 49 C73 45 87 45 96 49 L124 24 L116 53
+           C121 63 121 74 117 83 L129 90 L114 93 L107 107 L93 114
+           L80 124 L67 114 L53 107 L46 93 L31 90 L43 83 C39 74 39 63 44 53 Z"
+        fill="url(#pFur)"/>
+
+  <!-- светлые плоскости -->
+  <path d="M36 24 L64 49 C73 45 87 45 96 49 L124 24 L104 56 L56 56 Z" fill="url(#pLit)"/>
+  <path d="M46 62 L62 60 L60 86 L46 80 Z" fill="url(#pLit)" opacity=".35"/>
+  <path d="M114 62 L98 60 L100 86 L114 80 Z" fill="url(#pLit)" opacity=".35"/>
+
+  <!-- глаза -->
+  <path d="M46 58 L72 68 L70 78 L47 70 Z" fill="url(#pOr)"/>
+  <path d="M114 58 L88 68 L90 78 L113 70 Z" fill="url(#pOr)"/>
+
+  <!-- морда -->
+  <path d="M62 80 L98 80 L94 102 L80 110 L66 102 Z" fill="#2c333a"/>
+  <path d="M69 84 L91 84 L80 96 Z" fill="#0d1114"/>
+
+  <!-- пасть -->
+  <path d="M66 100 L94 100 L88 118 L80 126 L72 118 Z" fill="#0c1013"/>
+  <path d="M68 101 L74 100 L77 114 Z" fill="#f4f1ea"/>
+  <path d="M92 101 L86 100 L83 114 Z" fill="#f4f1ea"/>
+  <path d="M75 126 L73 116 L79 119 Z" fill="#f4f1ea" opacity=".85"/>
+  <path d="M85 126 L87 116 L81 119 Z" fill="#f4f1ea" opacity=".85"/>
+</symbol>
+</svg>
+
 <!-- ─────────── ПРЕЛОАДЕР ─────────── -->
 <div class="loader" id="loader" aria-hidden="true">
   <div class="loader__inner">
     <div class="loader__word"><span>Y</span><span>U</span><span>N</span><span>D</span><span>E</span><span>Z</span><span>I</span></div>
-    <div class="loader__bar"><i id="loaderBar"></i></div>
+
+    <div class="loader__run">
+      <div class="runner" id="loaderCat">
+        <svg viewBox="0 0 110 70" aria-hidden="true">
+          <defs>
+            <linearGradient id="runFur" x1=".2" y1="0" x2=".7" y2="1">
+              <stop offset="0" stop-color="#5d666f"/><stop offset="1" stop-color="#252b32"/>
+            </linearGradient>
+          </defs>
+
+          <!-- дальние лапы (темнее, позади корпуса) -->
+          <g class="rl rl--b2"><path d="M38 40 L44 50 L38 60"/></g>
+          <g class="rl rl--f2"><path d="M64 40 L58 50 L64 60"/></g>
+
+          <g class="rbody">
+            <!-- хвост -->
+            <path class="rtail" d="M24 33 C12 30 5 21 7 9"/>
+            <!-- корпус, шея и морда -->
+            <path d="M22 34 C22 26 32 21 42 23 C52 25 62 23 70 27
+                     L80 25 L97 30 L97 35 L86 37 L74 41
+                     C64 46 48 48 36 46 C26 44 22 40 22 34 Z" fill="url(#runFur)"/>
+            <!-- ухо -->
+            <path d="M81 28 L86 13 L94 28 Z" fill="#454e58"/>
+            <!-- глаз -->
+            <circle cx="89" cy="30" r="2.2" fill="#ff8f3c"/>
+          </g>
+
+          <!-- ближние лапы -->
+          <g class="rl rl--b1"><path d="M32 40 L26 50 L32 60"/></g>
+          <g class="rl rl--f1"><path d="M70 40 L76 50 L70 60"/></g>
+        </svg>
+      </div>
+      <div class="loader__track"><i id="loaderBar"></i></div>
+      <span class="loader__dust" aria-hidden="true"></span>
+    </div>
+
     <div class="loader__num"><span id="loaderNum">0</span>%</div>
   </div>
 </div>
@@ -65,8 +154,8 @@
 <!-- ─────────── ШАПКА ─────────── -->
 <header class="nav" id="nav">
   <a class="nav__logo" href="#top" data-magnet>
-    <span class="nav__mark" aria-hidden="true"></span>
-    <span class="nav__logotext">Yunde<i>Zi</i></span>
+    <span class="nav__mark" aria-hidden="true"><svg viewBox="0 0 160 160"><use href="#panther"/></svg></span>
+    <span class="nav__logotext">YUNDE<i>Z</i>I</span>
   </a>
   <nav class="nav__menu" aria-label="Основная навигация">
     <a href="#profile" data-link>Профиль</a>
@@ -81,18 +170,18 @@
     <svg class="mz__svg" viewBox="0 0 160 200" aria-hidden="true">
       <defs>
         <linearGradient id="mzHair" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#a98cff"/>
-          <stop offset=".5" stop-color="#6ea8ff"/>
-          <stop offset="1" stop-color="#25e6d2"/>
+          <stop offset="0" stop-color="#ffc071"/>
+          <stop offset=".5" stop-color="#ff8f3c"/>
+          <stop offset="1" stop-color="#ffab4a"/>
         </linearGradient>
         <linearGradient id="mzHairBack" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#7c5cff"/>
-          <stop offset="1" stop-color="#1fb9ab"/>
+          <stop offset="0" stop-color="#ff7a29"/>
+          <stop offset="1" stop-color="#c9420f"/>
         </linearGradient>
         <linearGradient id="mzEye" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#5ff0ff"/>
-          <stop offset=".55" stop-color="#4f8bff"/>
-          <stop offset="1" stop-color="#7c5cff"/>
+          <stop offset="0" stop-color="#ffd08a"/>
+          <stop offset=".55" stop-color="#ff8f3c"/>
+          <stop offset="1" stop-color="#ff7a29"/>
         </linearGradient>
         <linearGradient id="mzCloth" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#2a2a3d"/>
@@ -100,7 +189,7 @@
         </linearGradient>
         <linearGradient id="mzShoe" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#3a3a52"/>
-          <stop offset="1" stop-color="#7c5cff"/>
+          <stop offset="1" stop-color="#ff7a29"/>
         </linearGradient>
       </defs>
 
@@ -131,9 +220,9 @@
         <g class="mz__body">
           <path d="M80 90c17 0 27 11 29 26 1 5 1 12 1 12H50s0-7 1-12c2-15 12-26 29-26z"
                 fill="url(#mzCloth)"/>
-          <path d="M66 95c4 8 9 12 14 12s10-4 14-12" stroke="#7c5cff" stroke-width="3"
+          <path d="M66 95c4 8 9 12 14 12s10-4 14-12" stroke="#ff7a29" stroke-width="3"
                 fill="none" stroke-linecap="round" opacity=".9"/>
-          <circle cx="80" cy="116" r="3.4" fill="#25e6d2"/>
+          <circle cx="80" cy="116" r="3.4" fill="#ffab4a"/>
         </g>
 
         <!-- ── руки ── -->
@@ -195,8 +284,8 @@
           <path d="M41 60c-3 14-3 28 0 40 6-4 8-12 8-20s-4-16-8-20z" fill="url(#mzHair)"/>
           <path d="M119 60c3 14 3 28 0 40-6-4-8-12-8-20s4-16 8-20z" fill="url(#mzHair)"/>
           <!-- резинки -->
-          <rect x="36" y="44" width="15" height="9" rx="4.5" fill="#25e6d2" transform="rotate(-20 43.5 48.5)"/>
-          <rect x="109" y="44" width="15" height="9" rx="4.5" fill="#25e6d2" transform="rotate(20 116.5 48.5)"/>
+          <rect x="36" y="44" width="15" height="9" rx="4.5" fill="#ffab4a" transform="rotate(-20 43.5 48.5)"/>
+          <rect x="109" y="44" width="15" height="9" rx="4.5" fill="#ffab4a" transform="rotate(20 116.5 48.5)"/>
           <!-- ахоге -->
           <path class="mz__ahoge" d="M79 19c-2-10 5-17 11-14 5 3 4 10-1 10-2 0-3-2-2-3"
                 stroke="url(#mzHair)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
@@ -384,11 +473,6 @@
         </div>
 
         <aside class="about__side">
-        <figure class="shot" data-reveal data-delay="1" data-tilt>
-          <img src="assets/img/portrait.jpg" alt="Юрий Радочин" width="620" height="878" loading="lazy">
-          <figcaption>Юрий</figcaption>
-        </figure>
-
         <div class="about__card" data-reveal data-delay="2" data-tilt>
           <div class="about__card-glow" aria-hidden="true"></div>
           <ul class="facts">
@@ -404,6 +488,20 @@
         </div>
         </aside>
       </div>
+    </div>
+  </section>
+
+  <!-- ─────────── ВЛЁТ В ФОТО ─────────── -->
+  <section class="portal" id="portal" aria-label="Фотография">
+    <div class="portal__stage">
+      <figure class="portal__frame">
+        <img src="assets/img/portal.jpg" alt="Юрий" width="1638" height="1654" loading="lazy">
+        <span class="portal__veil" aria-hidden="true"></span>
+      </figure>
+      <div class="portal__text">
+        <p class="portal__line">Каждое направление дало<br><b>свой угол зрения</b></p>
+      </div>
+      <span class="portal__hint" aria-hidden="true">листай</span>
     </div>
   </section>
 

@@ -36,6 +36,7 @@
   const loader = $('#loader');
   const bar = $('#loaderBar');
   const num = $('#loaderNum');
+  const cat = $('#loaderCat');
 
   const finishLoad = () => {
     if (!loader || loader.classList.contains('is-done')) return;
@@ -52,6 +53,7 @@
     const tick = setInterval(() => {
       pct = Math.min(100, pct + Math.random() * 16 + 6);
       if (bar) bar.style.width = pct + '%';
+      if (cat) cat.style.left = pct + '%';
       if (num) num.textContent = Math.round(pct);
       if (pct >= 100) {
         clearInterval(tick);
@@ -117,6 +119,9 @@
   const progress = $('#scrollProgress');
   const fill = $('#timelineFill');
   const timeline = $('#timeline');
+  const portal = $('#portal');
+  const portalStage = portal && $('.portal__stage', portal);
+  const cover = $('.pf__cover');
   const links = $$('.nav__menu a[data-link]');
   const sections = links
     .map((a) => $(a.getAttribute('href')))
@@ -140,6 +145,36 @@
       const r = timeline.getBoundingClientRect();
       const p = clamp((window.innerHeight * 0.62 - r.top) / r.height, 0, 1);
       fill.style.height = p * 100 + '%';
+    }
+
+    // Влёт в фото: пока секция проходит мимо, кадр раскрывается и наезжает.
+    if (portal && portalStage && !reduced) {
+      const r = portal.getBoundingClientRect();
+      const span = r.height - window.innerHeight;
+      const p = span > 0 ? clamp(-r.top / span, 0, 1) : 0;
+      if (r.bottom > 0 && r.top < window.innerHeight) {
+        const e = p * p * (3 - 2 * p);           // плавный вход и выход
+        const st = portalStage.style;
+        st.setProperty('--ix', (30 - 30 * e) + '%');
+        st.setProperty('--iy', (26 - 26 * e) + '%');
+        st.setProperty('--r', (26 - 26 * e) + 'px');
+        st.setProperty('--s', (1.04 + e * 0.30).toFixed(3));
+        // на вертикальном экране кадр режется иначе: опускаем картинку,
+        // чтобы в окошко попало лицо, и убираем сдвиг по мере раскрытия
+        const ty = window.innerWidth < 900 ? 18 - e * 14 : 0;
+        st.setProperty('--ty', ty.toFixed(2) + '%');
+        st.setProperty('--v', (0.1 + e * 0.8).toFixed(3));
+        st.setProperty('--t', clamp((p - 0.45) / 0.35, 0, 1).toFixed(3));
+      }
+    }
+
+    // Обложка профиля слегка наезжает
+    if (cover && !reduced) {
+      const r = cover.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < window.innerHeight) {
+        const p = clamp((window.innerHeight - r.top) / (window.innerHeight + r.height), 0, 1);
+        cover.style.setProperty('--cs', p.toFixed(3));
+      }
     }
 
     let active = null;
@@ -295,7 +330,7 @@
           const d2 = dx * dx + dy * dy;
           if (d2 < LD * LD) {
             const a = (1 - Math.sqrt(d2) / LD) * 0.3;
-            ctx.strokeStyle = `rgba(124,92,255,${a})`;
+            ctx.strokeStyle = `rgba(255,122,41,${a})`;
             ctx.lineWidth = dpr * 0.7;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
@@ -306,7 +341,7 @@
 
         const pdx = p.x - pointer.x, pdy = p.y - pointer.y;
         const near = pdx * pdx + pdy * pdy < (170 * dpr) ** 2;
-        ctx.fillStyle = near ? 'rgba(37,230,210,.95)' : 'rgba(255,255,255,.55)';
+        ctx.fillStyle = near ? 'rgba(255,171,74,.95)' : 'rgba(255,255,255,.55)';
         ctx.beginPath();
         ctx.arc(p.x, p.y, near ? p.r * 1.7 : p.r, 0, Math.PI * 2);
         ctx.fill();
